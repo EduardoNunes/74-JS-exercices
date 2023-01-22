@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1E3</title>
+</head>
+<body>
+    <script>
+        var nota1 = Number(window.prompt('Digite a primeira nota: '))
+        var peso1 = Number(window.prompt('Digite o peso da primeira nota: '))
+        var nota2 = Number(window.prompt('Digite a segunda nota: '))
+        var peso2 = Number(window.prompt('Digite o peso da segunda nota: '))
+        var nota3 = Number(window.prompt('Digite a terceira nota: '))
+        var peso3 = Number(window.prompt('Digite o peso da terceira nota: '))
+
+        res = ((nota1*peso1) + (nota2*peso2) + (nota3*peso3)) / (peso1 + peso2 + peso3)
+
+        document.write(`A média ponderada é ${res}`)
+    </script>
+</body>
+</html>

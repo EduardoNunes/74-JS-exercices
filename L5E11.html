@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E11</title>
+</head>
+<body>
+    <h1>Mostrar posições de um vetor</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">          
+    <input type="button" value="Armazenar" onclick="farmazenar()">
+    <input type="button" value="Buscar número" onclick="fbuscar()">
+    <div id="res2"></br>Digite o 1º elemento.</div>
+    <div id="res"></br></div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var num = [[],[],[]]        
+        var maior = 0        
+        var a = 0
+        var b = 0
+        var c = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            res2.innerHTML = ""
+
+            if(c<9){
+                if(a<3 && b<3){
+                    var val = Number(txtval1.value)   
+                    num[a][b] = val
+                    b++
+                }
+                else if(a!=2 && b==3){
+                    var val = Number(txtval1.value)
+                    a++
+                    if(a<3 && b==3){
+                        b = 0
+                    }
+                    num[a][b] = val
+                    b++
+                }
+                c++              
+            }            
+            txtval1.value = ''  
+            if(c<9){
+                res.innerHTML = `</br>Digite o ${c+1}º elemento.`
+            }
+            else{
+                res.innerHTML = "</br>Digite um número e clique no botão buscar para encontrar o número e sua posição."                              
+            }      
+        }
+        
+        function fbuscar(){
+            var val = Number(txtval1.value) 
+
+            for(a=0; a<3; a++){
+                for(b=0; b<3; b++){
+                    if(num[a][b] == val){
+                        res2.innerHTML = "</br>"
+                        res.innerHTML = `O número ${val} está na posição ${a}, ${b}`
+                        break
+                    }   
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

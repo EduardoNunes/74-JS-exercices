@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2E3</title>
+</head>
+<body>
+    <h1>Ração para gatos</h1>
+    <h3>Peso</h3>
+    <input type="number" name="Peso do pacote" id="txtpeso">
+    <h3>Quantidade de gatos</h3>
+    <input type="number" name="Quantidade de gatos" id="txtgato">
+    <h3>Quantidade de ração fornecida</h3>
+    <input type="number" name="Quantidade fornecida" id="txtqtdd">    
+    <input type="button" value="Calcular" onclick="fcalcular()">    
+    <div id="res">Resultado</div>
+    <script>
+        var txtpeso1 = window.document.getElementById('txtpeso')
+        var txtgato1 = window.document.getElementById('txtgato')
+        var txtqtdd1 = window.document.getElementById('txtqtdd')
+        
+
+        function fcalcular(){
+            var peso = Number(txtpeso1.value)
+            var gatos = Number(txtgato1.value)
+            var quantidade = Number(txtqtdd1.value)
+            var resta
+	
+            resta = peso - (((quantidade/1000)*gatos)*5)
+            
+            res.innerHTML = `</br>A quantidade de ração restante após 5 dias é: ${resta}Kg`
+        }      
+        
+    </script>
+</body>
+</html>

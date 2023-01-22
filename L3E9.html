@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E9</title>
+</head>
+<body>
+    <h1>Ordem crescente</h1>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="number" name="txtnum3" id="txtnum3">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var num3 = window.document.getElementById('txtnum3')
+            var res = window.document.getElementById('res')
+            var n1 = Number(txtnum1.value)
+            var n2 = Number(txtnum2.value)
+            var n3 = Number(txtnum3.value)
+            
+                 if(n1 < n2 && n1 < n3){
+                
+                    if(n2 < n3){
+                        res.innerHTML = `</br>${n1}, ${n2}, ${n3}`
+                    }
+                    else if(n3 < n2){
+                        res.innerHTML = `</br>${n1}, ${n3}, ${n2}`			
+                        }
+                    
+                }else if(num2 < num1 && num2 < num3){
+                
+                    if(n1 < n3){
+                        res.innerHTML = `</br>${n2}, ${n1}, ${n3}`
+                    }
+                    else if(n3 < n1){
+                        res.innerHTML = `</br>${n2}, ${n3}, ${n1}`		
+                    }
+                    
+                }else if(n3 < n1 && n3 < n2){
+                
+                if(n1 < n2){
+                    res.innerHTML = `</br>${n3}, ${n1}, ${n2}`
+                }
+                else if(n2 < n1){
+                    res.innerHTML = `</br>${n3}, ${n2}, ${n1}`		
+                    }
+            }            
+        }
+    </script>
+</body>
+</html>

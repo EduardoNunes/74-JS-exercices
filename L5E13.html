@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E13</title>
+</head>
+<body>
+    <h1>Menor nota aluno</h1>    
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">          
+    <input type="button" value="Armazenar" onclick="farmazenar()">
+    <input type="button" value="Calcular" onclick="Calcular()"> 
+    <div id="res2"></br>Digite nota 1 do aluno 1</div>
+    <div id="res"></div>
+  
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var coluna = []
+        var linha = []
+        var menor = 11
+        var a = 0
+        var b = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            res2.innerHTML = ""            
+            
+            var num = Number(txtval1.value)
+            linha.push(num)
+
+            a++            
+
+            if(a==3){
+                coluna.push(linha)
+                a = 0
+                b++
+                linha = []
+            }
+            
+            res2.innerHTML = `</br>Digite nota ${a+1} do aluno ${b+1}`
+            txtval1.value = ''
+        }
+
+        function Calcular(){
+            res2.innerHTML = ""
+            var prova1 = 0
+            var prova2 = 0
+            var prova3 = 0
+            for(var i=0; i<coluna.length; i++){
+                for(var j=0; j<coluna.length; j++){
+                    if(coluna[i][j] < menor){
+                        menor = coluna[i][j]
+                    }                    
+                }
+                res2.innerHTML = `${res2.innerHTML}Aluno ${i+1}, menor nota ${menor}.</br>`
+                menor = 11
+            }
+            for(i=0; i<coluna.length; i++) {
+                if(coluna[i][0] < coluna[i][1] && coluna[i][0] < coluna[i][2]){
+                    prova1++
+                }
+                else if (coluna[i][1] < coluna[i][0] && coluna[i][1] < coluna[i][2]){
+                    prova2++
+                }
+                else if (coluna[i][2] < coluna[i][0] && coluna[i][2] < coluna[i][1]){
+                    prova3++
+                }
+            }
+            res.innerHTML = `</br>Menor nota prova 1, ${prova1}</br>Menor nota prova 2, ${prova2}</br>Menor nota prova 3, ${prova3}`
+
+        }
+    </script>
+</body>
+</html>

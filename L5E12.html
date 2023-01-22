@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E12</title>
+</head>
+<body>
+    <h1>Armazenar matriz, somar e multiplicar</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">          
+    <input type="button" value="Armazenar" onclick="farmazenar()"> 
+    <div id="res2"></br>Digite o 1º elemento.</div>
+    <div id="res"></div>
+    <div id="res1"></div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var num = [[],[],[]]        
+        var vet = [0, 0, 0]       
+        var a = 0
+        var b = 0
+        var c = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            res2.innerHTML = ""
+
+            if(c<15){
+                if(a<3 && b<5){
+                    var val = Number(txtval1.value)   
+                    num[a][b] = val
+                    b++
+                }
+                else if(a!=2 && b==5){
+                    var val = Number(txtval1.value)
+                    a++
+                    if(a<3 && b==5){
+                        b = 0
+                    }
+                    num[a][b] = val
+                    b++
+                }
+                c++              
+            }            
+            txtval1.value = ''  
+            if(c<15){
+                res.innerHTML = `</br>Digite o ${c+1}º elemento.`
+            }
+            else{
+                for(a=0; a<3; a++){
+                    for(b=0; b<5; b++){
+                        switch(a){
+                            case 0:
+                                vet[a] = num[a][b] + vet[a];
+                                break;
+                            
+                            case 1:
+                                vet[a] = num[a][b] + vet[a];
+                                break;
+
+                            case 2:
+                                vet[a] = num[a][b] + vet[a];
+                                break;
+                        }  
+                    }
+                }
+                res.innerHTML = ``
+                for(a=0; a<3; a++){
+                    for(b=0; b<5; b++){ 			
+                        num[a][b] *= vet[a]                    
+
+                        switch(a){
+                            case 0:
+                                res2.innerHTML = `${res2.innerHTML} ${num[a][b]}`
+                                break;
+                            
+                            case 1:
+                                res.innerHTML = `${res.innerHTML} ${num[a][b]}`
+                                break;
+
+                            case 2:
+                                res1.innerHTML = `${res1.innerHTML} ${num[a][b]}`
+                                break;
+                        }
+                    }                    
+	            }                                           
+            }      
+        }        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2E7</title>
+</head>
+<body>
+    <h1>Viagem</h1>
+    <h3>Digite o valor q você possui</h3>
+    <input type="number" name="Valor" id="txtval">          
+    <input type="button" value="Calcular" onclick="fcalcular()">    
+    <div id="res">Resultado</div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')             
+
+        function fcalcular(){
+            var val = Number(txtval1.value)                    
+	
+            var dol = val/4
+            var eur = val/4.25
+            var yen = val/0.10
+
+            res.innerHTML = `</br>Dólar ${dol.toFixed(2)}</br>Euro ${eur.toFixed(2)}</br> Yen ${yen.toFixed(2)}`                
+        }    
+        
+    </script>
+</body>
+</html>

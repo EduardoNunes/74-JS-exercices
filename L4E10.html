@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E10</title>
+</head>
+<body>
+    <h1>Aluno mais alto e mais baixo</h1>
+    <h3>Informe o número e a altura do aluno</h3>
+    <input type="number" name="txtnum1" id="txtnum1" onkeypress="readdata(event)">
+    <input type="button" value="Cadastrar novo aluno" onclick="fcadastrar()"> 
+    <div id="res"></br>Cadastre a altura do aluno 1</div>  
+    <script>
+        var txtnum1 = window.document.getElementById('txtnum1')        
+        var aluno = []
+        var res = window.document.getElementById('res')
+        var a = 0
+        var alt_maior = 0
+        var alt_menor = 999999
+        var maior
+        var menor
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                fcadastrar()
+            }
+        }        
+        
+        function fcadastrar(){                      
+            var num = Number(txtnum1.value)
+                           
+                aluno[a] = num
+                if(aluno[a] > alt_maior){
+                    maior = a+1
+                    alt_maior = aluno[a]
+                }
+                if(aluno[a] < alt_menor){
+                    menor = a+1
+                    alt_menor = aluno[a]
+                }                              
+                a++
+                txtnum1.value = ''
+                if(a<10){
+                    res.innerHTML = `</br>Cadastre a altura do aluno ${a+1}`
+                }
+                else{                
+                    res.innerHTML = `</br>Aluno mais alto ${maior}, com ${alt_maior} cm</br>Aluno mais baixo ${menor}, com ${alt_menor}cm`
+                }                                   
+        }           
+            
+    </script>
+</body>
+</html>

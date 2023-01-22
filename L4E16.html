@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E16</title>
+</head>
+<body>
+    <h1>Número par entre dois números</h1>    
+    <input type="number" name="txtnum1" id="txtnum1" onkeypress="readdata(event)">
+    <input type="button" value="Armazenar" onclick="fcadastrar()"> 
+    <div id="res"></br>Informe o 1º número</div>  
+    <script>
+        var txtnum1 = window.document.getElementById('txtnum1')       
+        var res = window.document.getElementById('res')
+        var a = 2
+        var num2
+        var num1
+        x = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                fcadastrar()
+            }
+        }        
+        
+        function fcadastrar(){
+            if(x<2){
+                var num = Number(txtnum1.value)
+                txtnum1.value = ""
+
+                if(a==2){
+                    res.innerHTML = `</br>Informe o ${a}º número`
+                    num1 = num
+                    a--
+                }
+                else{
+                    res.innerHTML = `</br>Informe o ${a}º número`
+                    num2 = num
+                    a++
+                }
+                x++
+            }
+            else{
+                res.innerHTML = ""
+                for(var i=num1; i<num2; i++){                    
+                    if(i%2 == 0){
+                        res.innerHTML = `${res.innerHTML} ${i}`
+                    }
+                }
+            }
+        }           
+            
+    </script>
+</body>
+</html>

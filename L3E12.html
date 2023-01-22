@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E12</title>
+</head>
+<body>
+    <h1>Ler valor de I e fazer as ordens sugeridas</h1>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="number" name="txtnum3" id="txtnum3">
+    <input type="number" name="txtnum4" id="txtnum4">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var num3 = window.document.getElementById('txtnum3')
+            var num3 = window.document.getElementById('txtnum4')
+            var res = window.document.getElementById('res')
+            var a = Number(txtnum1.value)
+            var b = Number(txtnum2.value)
+            var c = Number(txtnum3.value)
+            var i = Number(txtnum4.value)                
+
+            switch(i){
+                case 1:
+                    if(a<b && a<c){
+                        if(b<c){
+                            res.innerHTML = `</br>${a}, ${b}, ${c}` 
+                        }
+                        else if(c<b){
+                            res.innerHTML = `</br>${a}, ${c}, ${b}`
+                        }
+                    }
+                    else if(b<a && b<c){
+                        if(a<c){
+                            res.innerHTML = `</br>${b}, ${a}, ${c}`
+                        }
+                        else if(c<a){
+                            res.innerHTML = `</br>${b}, ${c}, ${a}`
+                        }	
+                    }
+                    else if(c<a && c<b){
+                        if(a<b){
+                            res.innerHTML = `</br>${c}, ${a}, ${b}`
+                        }
+                        else if(b<a){
+                            res.innerHTML = `</br>${c}, ${b}, ${a}`
+                        }
+                }break;
+                
+                case 2:
+                    if(a>b && a>c){
+                        if(b>c){
+                            res.innerHTML = `</br>${a}, ${b}, ${c}`
+                        }
+                        else if(c>b){
+                            res.innerHTML = `</br>${a}, ${c}, ${b}`
+                        }
+                    }
+                    else if(b>a && b>c){
+                        if(a>c){
+                            res.innerHTML = `</br>${b}, ${a}, ${c}`
+                        }
+                        else if(c>a){
+                            res.innerHTML = `</br>${b}, ${c}, ${a}`
+                        }	
+                    }
+                    else if(c>a && c>b){
+                        if(a>b){
+                            res.innerHTML = `</br>${c}, ${a}, ${b}`
+                        }
+                        else if(b>a){
+                            res.innerHTML = `</br>${c}, ${b}, ${a}`
+                        }
+                }break;
+                
+                case 3:
+                    if(a>b && a>c){
+                        res.innerHTML = `</br>${b}, ${a}, ${c}`				
+                    }
+                    else if(b>a && b>c){
+                        res.innerHTML = `</br>${a}, ${b}, ${c}`				
+                    }
+                    else if(c>a && c>b){
+                        res.innerHTML = `</br>${a}, ${c}, ${b}`
+                        }
+                break;
+                    
+            }
+        
+        }
+    </script>
+</body>
+</html>

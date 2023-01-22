@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E8</title>
+</head>
+<body>
+    <h1>Média aritmética 3 notas</h1>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="number" name="txtnum3" id="txtnum3">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var num3 = window.document.getElementById('txtnum3')
+            var res = window.document.getElementById('res')
+            var n1 = Number(txtnum1.value)
+            var n2 = Number(txtnum2.value)
+            var n3 = Number(txtnum3.value)
+
+            var s = (n1+n2+n3)/3
+
+            if (s < 3){
+                res.innerHTML = `</br> Média ${s} </br> Reprovado`
+            }
+            else if (s >= 3 && s < 7){
+                res.innerHTML = `</br> Média ${s} </br> Exame`
+            }
+            else if (s >= 7 && s <= 10){
+                res.innerHTML = `</br> Média ${s} </br> Aprovado`
+            }            
+        }
+    </script>
+</body>
+</html>

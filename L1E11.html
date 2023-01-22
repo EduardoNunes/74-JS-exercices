@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1E11</title>
+</head>
+<body>
+    <script>
+        var seg = Number(window.prompt('Informe os segundos '))
+
+        hora = Math.trunc(seg/3600)
+        min = Math.trunc((seg/60)%60)
+        seg = Math.trunc(seg % 60)
+
+        document.write(`${hora} horas, ${min} minutos e ${seg} segundos.`)
+    </script>
+</body>
+</html>

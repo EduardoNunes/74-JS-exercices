@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E9</title>
+</head>
+<body>
+    <h1>Números ímpares entre os números informados</h1>    
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="button" value="Calcular" onclick="fCalcular()">   
+    <div id="res"></br>Resultado</div>  
+    <script>
+        var num1 = window.document.getElementById('txtnum1')
+        var num2 = window.document.getElementById('txtnum2')         
+        var res = window.document.getElementById('res')
+        
+
+        function fCalcular(){
+            var a = Number(txtnum1.value)
+            var b = Number(txtnum2.value) 
+            var x
+            
+            while(a < b){
+				
+				x = a % 2;
+				if(x == 1){
+					res.innerHTML = `${res.innerHTML}, ${a}`
+				}
+				a++;
+			}                           
+        }        
+            
+    </script>
+</body>
+</html>

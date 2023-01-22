@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E12</title>
+</head>
+<body>
+    <h1>Identificar se é primo</h1>
+    <h3>Informe o número</h3>
+    <input type="number" name="txtnum1" id="txtnum1" onkeypress="readdata(event)">
+    <input type="button" value="Cadastrar novo aluno" onclick="fcadastrar()"> 
+    <div id="res"></div>  
+    <script>
+        var txtnum1 = window.document.getElementById('txtnum1')       
+        var res = window.document.getElementById('res')
+        var a = 0
+        var b = 2
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                fcadastrar()
+            }
+        }        
+        
+        function fcadastrar(){                      
+            var num = Number(txtnum1.value)
+                           
+            do{
+                a = num % b;
+                
+                if(b != num && a == 0){
+                    res.innerHTML = `</br>Não é primo`
+                    break;		
+                }
+
+                if(a == 0 && b == num){
+                    res.innerHTML = `</br>É primo`
+                }
+
+                b++;
+            }while(b<=num);
+            b = 2
+        }           
+            
+    </script>
+</body>
+</html>

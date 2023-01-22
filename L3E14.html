@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E14</title>
+</head>
+<body>
+    <h1>Calcular duração do jogo</h1>
+    <h3>Informe a hora e os minutos do início do jogo</h3>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <h3>Informe a hora e os minutos do final do jogo</h3>
+    <input type="number" name="txtnum3" id="txtnum3">
+    <input type="number" name="txtnum4" id="txtnum4">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var num3 = window.document.getElementById('txtnum3')
+            var num3 = window.document.getElementById('txtnum4')
+            var res = window.document.getElementById('res')
+            var hora1 = Number(txtnum1.value)
+            var min1 = Number(txtnum2.value)
+            var hora2 = Number(txtnum3.value)
+            var min2 = Number(txtnum4.value)                
+                    
+            if(hora1 > hora2){
+                var res_hora = 24 - (hora1-hora2);
+            }
+            if(hora1 < hora2){
+                var res_hora = hora2-hora1;	
+            }
+            if(min1 > min2){
+                var res_min = 60 - (min1-min2);
+            }
+            if(min1 < min2){
+                var res_min = min2-min1;
+            }
+
+            res.innerHTML = `</br>O jogo durou ${res_hora} horas e ${res_min}`
+        }
+    </script>
+</body>
+</html>

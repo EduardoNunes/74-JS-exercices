@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E15</title>
+</head>
+<body>
+    <h1>Fatorial E</h1>    
+    <input type="number" name="txtnum1" id="txtnum1" onkeypress="readdata(event)">
+    <input type="button" value="Calcular" onclick="fcadastrar()">
+    <div id="res"></br>Informe um número.</div>  
+    <script>
+        var txtnum1 = window.document.getElementById('txtnum1')       
+        var res = window.document.getElementById('res')
+        var num        
+        var e = 1
+        var fat = 1
+        var x = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                fcadastrar()
+            }
+        }        
+        
+        function fcadastrar(){
+            var num = Number(txtnum1.value)
+            txtnum1.value = ""
+            if(x<num){
+                for(var a=1; a<=num; a++){                    
+                    for(var b=1; b<=a; b++){					
+                        fat = fat * b
+                    }
+                        
+                    e = e + (1/fat);
+                    res.innerHTML = `</br>${e}`
+                    x++
+                }
+                x++
+            }
+            else{
+                
+            }
+        }
+    </script>    
+</body>
+</html>

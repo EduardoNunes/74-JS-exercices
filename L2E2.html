@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2E2</title>
+</head>
+<body>
+    <h1>Salário a receber</h1>
+    <h3>Horas trabalhadas</h3>
+    <input type="number" name="Horas" id="horas">
+    <h3>Salário mínimo</h3>
+    <input type="number" name="Salário" id="salario">    
+    <input type="button" value="Calcular" onclick="fcalcular()">    
+    <div id="res">Resultado</div>
+    <script>
+        var horas = window.document.getElementById('horas')
+        var salario = window.document.getElementById('salario')
+        
+
+        function fcalcular(){
+            var hor = Number(horas.value)
+            var sal = Number(salario.value)
+
+            var htrab = sal/2
+            var bruto = hor*htrab
+            var imp = (bruto*3)/100
+            var receber = bruto-imp
+            
+            res.innerHTML = `</br>O salário a receber é ${receber}`
+        }
+
+        
+    </script>
+</body>
+</html>

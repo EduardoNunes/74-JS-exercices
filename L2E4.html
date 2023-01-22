@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2E4</title>
+</head>
+<body>
+    <h1>Escada</h1>
+    <h3>Altura em cmo</h3>
+    <input type="number" name="Altura em cm" id="txtalt">
+    <h3>Altura a alcançar</h3>
+    <input type="number" name="Altura a alcançar" id="txtalc">       
+    <input type="button" value="Calcular" onclick="fcalcular()">    
+    <div id="res">Resultado</div>
+    <script>
+        var txtalt1 = window.document.getElementById('txtalt')
+        var txtalc1 = window.document.getElementById('txtalc')        
+
+        function fcalcular(){
+            var alt = Number(txtalt1.value)
+            var alc = Number(txtalc1.value)            
+            var a
+	
+            a = (alc/alt)*100
+
+            res.innerHTML = `</br>A quantidade de degraus é: ${a}`
+        }      
+        
+    </script>
+</body>
+</html>

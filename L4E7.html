@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E7</title>
+</head>
+<body>
+    <h1>Digitar números inteiros</h1>
+    <h3>Informe um número inteiro</h3>   
+    <input type="number" name="txtnum1" id="txtnum1">  
+    <input type="button" value="Encerrar" onclick="fCalcular()">
+    <input type="button" value="Digitar outro" onclick="foutro()">
+    <div id="res1"></br>Números digitados</div>
+    <div id="res2">Números inteiros positivos</div>
+    <script>
+        var num1 = window.document.getElementById('txtnum1')           
+        var res1 = window.document.getElementById('res1')
+        var res2 = window.document.getElementById('res2')
+        var y = 0
+        var x = 0           
+        
+        function foutro (){
+            var a = Number(txtnum1.value)
+            y++
+            if(a > 0){
+                x++
+            }
+            res1.innerHTML = `</br>A quantidade de números digitados é ${y}`
+            return x
+        }
+        function fCalcular(){                             
+            res2.innerHTML = `A quantidade de números positivos inteiros é ${foutro(x)}`               
+        }
+    </script>
+</body>
+</html>

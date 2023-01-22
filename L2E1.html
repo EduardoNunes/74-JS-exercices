@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1E1</title>
+</head>
+<body>
+    <h1>Custo de carro novo</h1>
+    <h3>Preço de fábrica</h3>
+    <input type="number" name="fabrica" id="fab">
+    <h3>Percentual de lucro</h3>
+    <input type="number" name="perc_luc" id="perc_luc">
+    <h3>Impostos</h3>
+    <input type="number" name="imposto" id="imp">
+    <input type="button" value="Calcular lucro do distribuidor" onclick="flucro()">
+    <input type="button" value="Calcular valor do imposto" onclick="fimposto()">
+    <input type="button" value="Calcular o valor final" onclick="ffinal()">
+    <div id="res">Resultado</div>
+
+    <script>       
+
+        function flucro(){
+            var fab = window.document.getElementById('fab')
+            var perc_luc = window.document.getElementById('perc_luc')
+            var imp = window.document.getElementById('imp')
+            var fab1 = Number(fab.value)
+            var perc_luc1 = Number(perc_luc.value)
+            var imp1 = Number(imp.value)
+
+            var lucro = (fab1*perc_luc1)/100
+
+            res.innerHTML = `O lucro do distribuidor é ${lucro}`
+            return lucro
+        }
+        function fimposto(){
+            var fab = window.document.getElementById('fab')
+            var perc_luc = window.document.getElementById('perc_luc')
+            var imp = window.document.getElementById('imp')
+            var fab1 = Number(fab.value)
+            var perc_luc1 = Number(perc_luc.value)
+            var imp1 = Number(imp.value)
+
+            var imposto = (fab1*imp1)/100
+
+            res.innerHTML = `O valor do imposto é ${imposto}`
+            return imposto
+        }
+        function ffinal(){
+            var fab = window.document.getElementById('fab')
+            var perc_luc = window.document.getElementById('perc_luc')
+            var imp = window.document.getElementById('imp')
+            var fab1 = Number(fab.value)
+            var perc_luc1 = Number(perc_luc.value)
+            var imp1 = Number(imp.value)
+
+            var final = fab1 + flucro() + fimposto()
+
+            res.innerHTML = `O valor final do carro é ${final}`
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E5</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="button" value="Somar" onclick="somar()">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" onclick="dividir()">
+    <div id="res">Resultado</div>
+    <script>
+        
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var res = window.document.getElementById('res')
+
+
+        function somar(){
+                var n1 = Number(txtnum1.value)
+                var n2 = Number(txtnum2.value)
+                s = n1+n2
+                res.innerHTML = `${n1} mais ${n2} é ${s}`            
+        }
+        function subtrair(){
+                var n1 = Number(txtnum1.value)
+                var n2 = Number(txtnum2.value)
+                s = n1-n2
+                res.innerHTML = `${n1} menos ${n2} é ${s}`            
+        }
+        function multiplicar(){
+                var n1 = Number(txtnum1.value)
+                var n2 = Number(txtnum2.value)
+                s = n1*n2
+                res.innerHTML = `${n1} vezes ${n2} é ${s}`            
+        }
+        function dividir(){
+                var n1 = Number(txtnum1.value)
+                var n2 = Number(txtnum2.value)
+                s = n1/n2
+                res.innerHTML = `${n1} dividido por ${n2} é ${s}`            
+        }
+        
+    </script>
+</body>
+</html>

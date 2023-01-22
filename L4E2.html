@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E2</title>
+</head>
+<body>
+    <h1>Mostrar os números inteiros entre dois números</h1>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="number" name="txtnum2" id="txtnum2">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')
+            var num2 = window.document.getElementById('txtnum2')
+            var res = window.document.getElementById('res')
+            var a = Number(txtnum1.value)
+            var b = Number(txtnum2.value)
+            
+            var c = a + 1
+
+            while(c < b){
+                res.innerHTML = `${res.innerHTML} ${c}`
+                c++;
+            }
+        }
+    </script>
+</body>
+</html>

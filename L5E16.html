@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<br lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E16</title>
+</head>
+<br>
+    <h1>Buscar produto</h1>    
+    <label for="inputcodigo">Código:</label>
+    <input type="text" id="inputcodigo">
+    </br></br>
+    <label for="inputnome">Nome:</label>
+    <input type="text" id="inputnome">
+    </br></br>
+    <label for="inputvalor">Valor:</label>
+    <input type="text" id="inputvalor">
+    </br></br>
+    <label for="inputquantidade">Quantidade:</label>
+    <input type="text" id="inputquantidade">
+    </br></br>
+    <button onclick="farmazenar()"> Cadastrar Produto</button>
+    </br></br></br>
+    <label for="inputbusca">Digite o código para busca:</label>
+    </br></br>
+    <input type="text" id="inputbusca">
+    </br></br>
+    <button onclick="fbuscar()"> Buscar por código</button> 
+    <div id="res"></br>Resposta</div>
+    <div id="res2"></br></div>
+    <script>
+        var inputcodigo = window.document.getElementById('inputcodigo')
+        var inputnome = window.document.getElementById('inputnome') 
+        var inputvalor = window.document.getElementById('inputvalor') 
+        var inputaquantidade = window.document.getElementById('inputquantidade')
+        var inputbusca = window.document.getElementById('inputbusca') 
+        var lista = []        
+
+        function farmazenar(){            
+            let produto = {
+                codigo: inputcodigo.value, 
+                nome: inputnome.value, 
+                valor: inputvalor.value, 
+                quantidade: inputquantidade.value    
+            }
+
+            lista.push(produto)
+
+            inputcodigo.value = ""
+            inputnome.value = ""
+            inputvalor.value = ""
+            inputquantidade.value = "" 
+
+        }
+
+        function fbuscar(){            
+            busca = Number(inputbusca.value)
+            var codigo
+
+            for(var i=0; i<lista.length; i++){
+                codigo = Number(lista[i].codigo)                
+
+                if(busca == codigo){
+                    res.innerHTML = `</br>Código: ${lista[i].codigo}</br>Produto: ${lista[i].nome}</br>Valor: R$${lista[i].valor}</br>Quantidade: ${lista[i].quantidade}`
+                    break
+                }
+            }
+        }
+    </script>
+</body>
+</html>

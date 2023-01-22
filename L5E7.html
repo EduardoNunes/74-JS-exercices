@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E7</title>
+</head>
+<body>
+    <h1>Matriz quadrado da linha</h1>
+    <div id="res"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <script>               
+        var mat = [[],[],[]]
+        c = 0
+        var b = 0
+        var a = 0
+
+        for(a=0; a<3; a++){
+            for(b=0; b<3; b++){                
+                mat[a][b] = c
+                
+                if(a==0){
+                    res.innerHTML = `${res.innerHTML}${mat[a][b]}`
+                }
+                if(a==1){
+                    res2.innerHTML = `${res2.innerHTML}${mat[a][b]}`
+                }
+                if(a==2){
+                    res3.innerHTML = `${res3.innerHTML}${mat[a][b]}`
+                }
+                c++
+            }            
+        }        
+    </script>
+</body>
+</html>

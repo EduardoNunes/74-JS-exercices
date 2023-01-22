@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E5</title>
+</head>
+<body>
+    <h1>Charlinho e Bossa</h1>    
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+                      
+            var res = window.document.getElementById('res')                       
+            var cha = 140
+            var bos = 145
+            var anos = 0
+
+            do{
+                cha = cha + 2.1;
+                bos = bos + 1.1;
+                anos++;
+            }while (cha <= bos);    
+            
+            res.innerHTML = `Serão necessários ${anos} anos`
+        }        
+        
+    </script>
+</body>
+</html>

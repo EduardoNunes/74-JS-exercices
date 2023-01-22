@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E14</title>
+</head>
+<body>
+    <h1>Nome idade peso e altura</h1>    
+    <label for="inputnome">Nome:</label>
+    <input type="text" id="inputnome">
+    </br></br>
+    <label for="inputidade">Idade:</label>
+    <input type="text" id="inputidade">
+    </br></br>
+    <label for="inputpeso">Peso:</label>
+    <input type="text" id="inputpeso">
+    </br></br>
+    <label for="inputaltura">Altura:</label>
+    <input type="text" id="inputaltura">
+    </br></br>
+    <button onclick="farmazenar()"> Armazenar</button>
+    <button onclick="fcalcular()"> Mostrar</button> 
+    <div id="res"></br>Resposta</div>
+    <div id="res2"></br></div>
+    <script>
+        var inputnome = window.document.getElementById('inputnome')
+        var inputidade = window.document.getElementById('inputidade') 
+        var inputpeso = window.document.getElementById('inputpeso') 
+        var inputaltura = window.document.getElementById('inputaltura')       
+        var lista = []        
+
+        function farmazenar(){            
+            let pessoa = {
+                nome: inputnome.value, 
+                idade: inputidade.value, 
+                peso: inputpeso.value, 
+                altura: inputaltura.value    
+            }
+
+            lista.push(pessoa)
+
+            inputnome.value = ""
+            inputidade.value = ""
+            inputpeso.value = ""
+            inputaltura.value = ""           
+        }
+
+        function fcalcular(){
+            var tam = lista.length-1
+
+            res.innerHTML = `</br>Pessoa 1: Nome ${lista[0].nome}. Idade ${lista[0].idade}.`
+            res2.innerHTML = `</br>Última pessoa: Peso: ${lista[tam].peso}. Altura ${lista[tam].altura}.`
+        }
+    </script>
+</body>
+</html>

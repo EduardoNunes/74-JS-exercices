@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E3</title>
+</head>
+<body>
+    <h1>Buscar um número em um conjunto de vetores</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">          
+    <input type="button" value="Calcular" onclick="farmazenar()">
+    <input type="button" value="Buscar" onclick="fbuscar()">  
+    <div id="res"></br>Digite o 1º elemento</div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var num = []
+        var a = 0
+        var total = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            
+            if(a<10){
+                num.push(Number(txtval1.value))
+                total += num[a]
+
+                a++
+                if(a!=10){
+                    res.innerHTML = `</br>Digite o ${a+1}º elemento`
+                }
+                else{
+                    for(a=0;a<10;a++){
+                        res.innerHTML = `</br>Digite o número que deseja encontrar e clique no botão 'Buscar'`
+                    }
+                }
+            }
+            
+            txtval1.value = ''
+        } 
+        function fbuscar(){
+            var end = Number(txtval1.value)
+            
+            if(num.indexOf(end) >= 0){
+                res.innerHTML = `</br>O número ${end} está armazenado na posição ${num.indexOf(end)}`
+            }
+            else{
+                res.innerHTML = `</br>Número não encontrado`
+            }
+        }
+        
+    </script>
+</body>
+</html>

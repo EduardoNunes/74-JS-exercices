@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2E5</title>
+</head>
+<body>
+    <h1>Quilowatt</h1>
+    <h3>Valor do salário mínimo</h3>
+    <input type="number" name="Salário" id="txtsal">
+    <h3>Quilowatts consimido</h3>
+    <input type="number" name="Quilowatts" id="txtquilo">       
+    <input type="button" value="Calcular" onclick="fcalcular()">    
+    <div id="res">Resultado</div>
+    <script>
+        var txtsal1 = window.document.getElementById('txtsal')
+        var txtquilo1 = window.document.getElementById('txtquilo')        
+
+        function fcalcular(){
+            var sal = Number(txtsal1.value)
+            var quilo = Number(txtquilo1.value)            
+	
+            var kilo = sal/1000
+            var boleto = kilo * quilo
+            var desconto = boleto - ((boleto*15)/100)
+
+            res.innerHTML = `</br>Valor do quilowatt ${kilo}</br>Valor a ser pago ${boleto}</br>Valor com desconto ${desconto}`
+        }      
+        
+    </script>
+</body>
+</html>

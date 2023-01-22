@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E3</title>
+</head>
+<body>
+    <h1>Dizer se é ímpar ou par</h1>
+    <input type="number" name="txtnum1" id="txtnum1">    
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1')            
+            var res = window.document.getElementById('res')
+            var n1 = Number.parseInt(txtnum1.value)     
+            
+            var s = n1 % 2
+
+            if (s == 1){
+                res.innerHTML = `${n1} é ímpar`
+            }
+            else {
+                res.innerHTML = `${n1} é par`
+            }
+            
+        }
+    </script>
+</body>
+</html>

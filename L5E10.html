@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E10</title>
+</head>
+<body>
+    <h1>Matriz resultante do maior número</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">          
+    <input type="button" value="Calcular" onclick="farmazenar()">
+    <div id="res2"></br>Digite o 1º elemento</div>
+    <div id="res"></br></div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var num = [[],[]]        
+        var maior = 0
+        var total = 0
+        var a = 0
+        var b = 0
+        var c = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            res2.innerHTML = ""
+
+            if(c<4){
+                var val = Number(txtval1.value)
+                if (val>maior){
+                    maior = val
+                }
+                if(b<2){
+                    num[a][b] = val                    
+                    b++   
+                    c++
+                }
+                else if(a<2){
+                    a++                    
+                    if(b==2){
+                        b=0
+                    }
+                    num[a][b] = val
+                    b++
+                    c++
+                }   
+                total += val             
+            }            
+            txtval1.value = ''  
+            if(c<4){
+                res.innerHTML = `</br>Digite o ${c+1}º elemento`
+            }
+            else{
+                res.innerHTML = ""
+                for(var i=0; i<2; i++){
+                    for(var j=0; j<2; j++){
+                        num[i][j] = num[i][j] * maior
+                        res2.innerHTML = "</br>"
+                        res.innerHTML = `${res.innerHTML} ${num[i][j]},`
+                    }
+                }
+                
+            }      
+        }          
+        
+    </script>
+</body>
+</html>

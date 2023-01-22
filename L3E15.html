@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3E15</title>
+</head>
+<body>
+    <h1>Salário com bonificação</h1>
+    <h3>Informe o salário</h3>
+    <input type="number" name="txtnum1" id="txtnum1">
+    <input type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        function Calcular(){
+
+            var num1 = window.document.getElementById('txtnum1') 
+            var res = window.document.getElementById('res')
+            var sal = Number(txtnum1.value)        
+
+            if(sal <= 500){
+                var bon = (sal*5)/100;                
+            }
+            else if(sal > 500 && sal <= 1200){
+               var bon = (sal*12)/100;
+                
+            }else 
+                var bon = 0;            
+            
+            if(sal <= 600){
+                var aux = 150;                
+            }
+            else if(sal > 600){
+                var aux = 100;
+            }
+            
+            var sal_nov = sal + bon + aux;
+            
+            res.innerHTML = `Salário final ${sal_nov}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E14</title>
+</head>
+<body>
+    <h1>Fatorial</h1>    
+    <input type="number" name="txtnum1" id="txtnum1" onkeypress="readdata(event)">
+    <input type="button" value="Calcular" onclick="fcadastrar()">
+    <div id="res"></br>Informe a quantidade de números que serão lidos.</div>  
+    <script>
+        var txtnum1 = window.document.getElementById('txtnum1')       
+        var res = window.document.getElementById('res')
+        var cont = []
+        var loop = 0
+        var x = 0
+        var fat = 1
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                fcadastrar()
+            }
+        }        
+        
+        function fcadastrar(){ 
+            var num = Number(txtnum1.value)
+            if(loop==0){
+                loop += num
+            }
+            txtnum1.value = ""
+
+            if(x<=loop){                
+                cont[x] = num                
+                x++
+                res.innerHTML = `</br>Informe o ${x}º número.`
+            }
+            else{
+                for(var b=1; b<=loop; b++){
+                    for(var a=1; a<=cont[b]; a++){
+                        fat = fat*a
+                    }
+                    res.innerHTML = `${res.innerHTML} ${fat}`
+                    fat = 1
+                }
+            }
+        }
+            
+    </script>
+</body>
+</html>

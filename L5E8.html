@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E8</title>
+</head>
+<body>
+    <h1>Positivos e negativos através de um vetor</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">
+    <input type="button" value="Armazenar" onclick="farmazenar()">    
+    <div id="res"></br>Digite o 1º elemento</br></div>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval') 
+        var mat = [[],[],[]]
+        c = 1
+        var b = 0
+        var a = 0        
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+
+            if(a<3 && b<3){
+                mat[a][b] = Number(txtval1.value)
+                b++
+                if(b==3){
+                    a++
+                    if(a!=3 || b!=3){
+                       b = 0
+                    }
+                }                 
+            }
+            else{                
+                for(a=0; a<3; a++){
+                    for(b=0; b<3; b++){
+                        res.innerHTML = ""                        
+                        if (a!=b){
+                            mat[a][b] = 0
+                        }
+
+                        if(a==0){
+                            res1.innerHTML = `${res1.innerHTML}${mat[a][b]}`
+                        }
+                        if(a==1){
+                            res2.innerHTML = `${res2.innerHTML}${mat[a][b]}`
+                        }
+                        if(a==2){
+                            res3.innerHTML = `${res3.innerHTML}${mat[a][b]}`
+                        }                        
+                    }            
+                }
+            }
+            txtval1.value = ''
+            c++
+            if(c<=9){
+                res.innerHTML = `</br>Digite o ${c}º elemento`
+            }
+            else{
+                res.innerHTML = "Aperte enter para mostrar o resultado"
+            }
+        }
+    </script>
+</body>
+</html>

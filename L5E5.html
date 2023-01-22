@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5E5</title>
+</head>
+<body>
+    <h1>Intercalação de 2 vetores</h1>
+    <h3>Digite os elementos</h3>
+    <input type="number" name="Valor" id="txtval" onkeypress="readdata(event)">
+    <input type="button" value="Calcular" onclick="farmazenar()">    
+    <div id="res"></br>Digite o 1º elemento</div>
+    <script>
+        var txtval1 = window.document.getElementById('txtval')        
+        var vet1 = []
+        var vet2 = []
+        var a = 0
+
+        function readdata(event){
+            if(event.key == "Enter"){
+                farmazenar()
+            }
+        }
+
+        function farmazenar(){
+            
+            if(a<20){                
+                if(a<10){
+                    vet1.push(Number(txtval1.value))
+                }
+                else if(a<20){
+                    vet2.push(Number(txtval1.value))
+                }
+            }
+            a++
+
+            if(a==20){
+                for(var i = 0; i<10; i++){
+                    res.innerHTML = `${res.innerHTML}</br>${vet1[i]}`                    
+                    res.innerHTML = `${res.innerHTML}</br>${vet2[i]}`                   
+                }
+            }
+
+            
+            txtval1.value = ''
+        }    
+        
+    </script>
+</body>
+</html>

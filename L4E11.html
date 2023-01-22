@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4E11</title>
+</head>
+<body>
+    <h1>Fibonacci 8 dígitos</h1>       
+    <div id="res"></div>
+    <script>        
+        var fib1 = 1
+        var fib2 = 0
+        var fib3 = 0       
+		
+            res.innerHTML = `0 1 `
+    
+            for(var a=0; a<7; a++){               
+                
+                fib3 = fib1 + fib2;
+                fib2 = fib1;
+                fib1 = fib3;
+
+                res.innerHTML = `${res.innerHTML} ${fib1}`
+            }                   
+    </script>
+</body>
+</html>

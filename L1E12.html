@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1E12</title>
+</head>
+<body>
+    <script>
+        var saque = Number.parseInt(window.prompt('Informe o valor a ser sacado: '))
+
+        var cem = Math.trunc(saque/100)
+        var saque = saque % 100
+        var cinq = Math.trunc(saque/50)
+        var saque = saque % 50
+        var vinte = Math.trunc(saque/20)
+        var saque = saque % 20
+        var dez = Math.trunc(saque/10)
+        var saque = saque % 10
+        var cinco = Math.trunc(saque/5)
+        var saque = saque % 5
+        var dois = Math.trunc(saque/2)
+        var saque = Math.trunc(saque % 2)
+
+        document.write(`${cem} notas de cem <br/> ${cinq} notas de cinquenta <br/> ${vinte} notas de vinte <br/> ${dez} notas de dez <br/> ${cinco} notas de cinco <br/>${dois} notas de dois <br/>`)
+    </script>
+</body>
+</html>
